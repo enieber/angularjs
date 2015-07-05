@@ -1,0 +1,21 @@
+{
+  "name": "todo-angular",
+  "version": "0.0.1",
+  "authors": [
+    "Enieber <eniebercunha@gmail.com>"
+  ],
+  "description": "First contact with angularjs",
+  "main": "index.html",
+  "keywords": [
+    "angular",
+    "Todo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
