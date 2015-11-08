@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="Todo">
+<html lang="pt-br" ng-app="list">
 <head>
 	<meta charset="UTF-8">
-	<title>Todo</title>
+	<title>Todo List</title>
+	<link rel="stylesheet" href="app/css/style.css">
 </head>
 <body>
-	<style>
-	.done{
-		text-decoration: line-through; color:#ccc;
-	}
-	</style>
-	<div ng-controller="todoCtrl">
+	<div ng-controller="listCtrl">
 		<form name="form" ng-submit="addTodo()">
 			<input type="text" name="newtodo" ng-model="newTodo" required/>
 			<button ng-disabled="form.$invalid">GO</button>
@@ -25,25 +21,8 @@
 
 	</div>
 	<script src="bower_components/angular/angular.min.js"></script>
-	<script>
-
-	angular.module('Todo', [])
-	.controller('todoCtrl', ['$scope', function($scope) {
-		$scope.todos = [
-			{'title':'Build a todo app', 'done':false}
-		];
-
-		$scope.addTodo = function() {
-			$scope.todos.push({'title': $scope.newTodo,'done':false})
-			$scope.newTodo = ''
-		}
-		$scope.clear = function(){
-			$scope.todos = $scope.todos.filter(function(item){
-				return !item.done;
-			})
-		}
-	}])
-	</script>
+	<script src="app/app.js"></script>
+	<script src="app/ListController.js"></script>
 
 </body>
 </html>
