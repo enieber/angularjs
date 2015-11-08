@@ -1,0 +1,41 @@
+@import 'jeet'
+@import 'rupture'
+
+col-style()
+	box-sizing border-box
+	border 1px solid #ccc
+	margin-bottom 10px
+
+body
+	text-aling center
+	font-family Arial, sans-serif
+	line-height 1.5
+	background #f8f8f8
+
+header
+	center(900px, 10px)
+	
+h3, h4
+	font-weight normal
+
+p, h3
+	font-style italic
+	
+.center
+	positon absolute
+	
+
+.container
+	center(900px, 10px)
+
+	div
+		col-style()
+
+		+above(600px)
+			col(1/2, cycle:2, gutter: 4)
+
+		+above(900px)
+			col(4/8, cycle:4, uncycle:8)
+
+		p
+			padding 10px

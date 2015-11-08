@@ -4,20 +4,34 @@
 	<meta charset="UTF-8">
 	<title>Todo List</title>
 	<link rel="stylesheet" href="app/css/style.css">
+	<link rel="stylesheet" href="app/stylus/stylus.css">
 </head>
 <body>
+	<header>
+		<h1>Todo List with Angular.js</h1>
+		<p>use, Stylus, Karma and gulp</p>
+	</header>
+	
 	<div ng-controller="listCtrl">
-		<form name="form" ng-submit="addTodo()">
-			<input type="text" name="newtodo" ng-model="newTodo" required/>
-			<button ng-disabled="form.$invalid">GO</button>
-		</form>
-		<button ng-click="clear()">excluir</button>
-		<ul>
-			<li ng-repeat="todo in todos">
-			<input type="checkbox" ng-model="todo.done">
-			<span ng-class="{'done':todo.done}">{{todo.title}}</span>
-			</li>
-		</ul>
+		<div class="container center">
+			<form name="form" ng-submit="addTodo()">		
+				<input type="text" name="newtodo" ng-model="newTodo" required/>		
+				<button ng-disabled="form.$invalid">GO</button>
+			</form>			
+		</div>
+		
+		<div class="container">
+			<ul>
+				<li ng-repeat="todo in todos">
+				<input type="checkbox" ng-model="todo.done">
+				<span ng-class="{'done':todo.done}">{{todo.title}}</span>
+				</li>
+			</ul>
+		</div>
+		<div class="container">
+			<button ng-click="clear()">excluir</button>
+
+		</div>
 
 	</div>
 	<script src="bower_components/angular/angular.min.js"></script>
